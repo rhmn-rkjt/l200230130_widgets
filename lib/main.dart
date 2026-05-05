@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'pages/home.dart';
 // import 'pages/images.dart';
-import 'pages/form.dart';
+// import 'pages/form.dart';
+import 'pages/orientation.dart';
 
 void main() {
   runApp(const MyApp());
