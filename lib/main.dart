@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/home.dart';
+// import 'pages/home.dart';
+import 'pages/images.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.lightGreen),
-      home: Home(),
+      home: Home(), 
     );
   }
 }

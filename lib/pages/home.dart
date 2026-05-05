@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+class Home extends StatefulWidget {
+  @override _HomeState createState() => _HomeState();
+}
+
 class TodoMenuItem {
   final String title;
   final Icon icon;
@@ -8,14 +12,15 @@ class TodoMenuItem {
 }
 
 List<TodoMenuItem> foodMenuList = [
-  TodoMenuItem(title: 'Fast Food', icon: Icon(Icons.fastfood)),
-  TodoMenuItem(title: 'Flight', icon: Icon(Icons.flight)),
+  TodoMenuItem(
+    title: 'Fast Food',
+    icon: Icon(Icons.fastfood),
+  ),
+  TodoMenuItem(
+    title: 'Flight',
+    icon: Icon(Icons.flight),
+  ),
 ];
-
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
 
 class _HomeState extends State<Home> {
   @override
@@ -27,24 +32,35 @@ class _HomeState extends State<Home> {
           onPressed: () {},
         ),
         title: Text('Home'),
-        actions: [
-          IconButton(icon: Icon(Icons.search), onPressed: () {}),
-          IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {},
+          ),
         ],
         flexibleSpace: SafeArea(
-          child: Icon(Icons.photo_camera, size: 75, color: Colors.white70),
+          child: Icon(
+            Icons.photo_camera,
+            size: 75,
+            color: Colors.white70,
+          ),
         ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(75.0),
           child: Container(
             height: 75,
             color: Colors.lightGreen.shade100,
-            child: Center(child: Text('Bottom')),
+            child: Center(
+              child: Text('Bottom'),
+            ),
           ),
         ),
       ),
 
-      // ================= BODY =================
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: SafeArea(
@@ -52,7 +68,6 @@ class _HomeState extends State<Home> {
             child: Column(
               children: <Widget>[
 
-                // ================= DEMO 1 =================
                 Container(
                   height: 100,
                   width: 100,
@@ -88,6 +103,7 @@ class _HomeState extends State<Home> {
 
                 SizedBox(height: 20),
 
+                // Column, Row
                 Column(
                   children: [
                     Text('Col 1'),
@@ -105,7 +121,7 @@ class _HomeState extends State<Home> {
 
                 SizedBox(height: 20),
 
-                // TextButton
+                // Flat Buttons versi terbaru Flutter jadi Text Button
                 Row(
                   children: [
                     TextButton(
@@ -123,7 +139,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
 
-                // ElevatedButton
+                // RaisedButton versi terbaru Flutter jadi ElevatedButton
                 Row(
                   children: [
                     ElevatedButton(
@@ -159,7 +175,7 @@ class _HomeState extends State<Home> {
 
                 SizedBox(height: 20),
 
-                // Popup Menu
+                // PopupMenuButton
                 PopupMenuButton<TodoMenuItem>(
                   icon: Icon(Icons.view_list),
                   onSelected: (val) {
@@ -172,7 +188,9 @@ class _HomeState extends State<Home> {
                         child: Row(
                           children: [
                             Icon(item.icon.icon),
-                            SizedBox(width: 8),
+                            Padding(
+                              padding: EdgeInsets.all(8),
+                            ),
                             Text(item.title),
                           ],
                         ),
@@ -183,65 +201,26 @@ class _HomeState extends State<Home> {
 
                 SizedBox(height: 20),
 
-                // ButtonBar
+                // Button Bar
                 Container(
                   color: Colors.white70,
                   child: ButtonBar(
                     alignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      IconButton(icon: Icon(Icons.map), onPressed: () {}),
-                      IconButton(icon: Icon(Icons.airport_shuttle), onPressed: () {}),
-                      IconButton(icon: Icon(Icons.brush), onPressed: () {}),
+                      IconButton(
+                        icon: Icon(Icons.map),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.airport_shuttle),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.brush),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
-                ),
-
-                // ================= DEMO 3 (IMAGES + FORM) =================
-                SizedBox(height: 20),
-
-                Row(
-                  children: <Widget>[
-                    Image(
-                      image: AssetImage('assets/images/logo.jpg'),
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width * 0.3,
-                    ),
-                    Image.network(
-                      'https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png',
-                      width: MediaQuery.of(context).size.width * 0.3,
-                    ),
-                    Icon(Icons.brush, color: Colors.lightBlue, size: 48.0),
-                  ],
-                ),
-
-                SizedBox(height: 20),
-
-                Container(
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.orange,
-                    boxShadow: [
-                      BoxShadow(color: Colors.grey, blurRadius: 10)
-                    ],
-                  ),
-                ),
-
-                SizedBox(height: 20),
-
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Notes',
-                    labelStyle: TextStyle(color: Colors.purple),
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-
-                SizedBox(height: 10),
-
-                TextFormField(
-                  decoration: InputDecoration(labelText: 'Enter your notes'),
                 ),
 
               ],
@@ -250,12 +229,14 @@ class _HomeState extends State<Home> {
         ),
       ),
 
+      // Floating Action Button
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.play_arrow),
       ),
 
+      // Bottom Bar
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         color: Colors.lightGreen.shade100,
