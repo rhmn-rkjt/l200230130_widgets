@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
           icon: const Icon(Icons.menu),
           onPressed: () {},
         ),
-        title: const Text('Tugas Pertemuan 6'),
+        title: const Text('Tugas 4 Pertemuan 8'),
         actions: [
           IconButton(icon: const Icon(Icons.search), onPressed: () {}),
           PopupMenuButton<MenuItem>(
