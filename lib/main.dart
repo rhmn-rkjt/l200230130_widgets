@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 // import 'pages/home.dart';
 // import 'pages/images.dart';
 // import 'pages/form.dart';
-import 'pages/orientation.dart';
+// import 'pages/orientation.dart';
+import 'pages/tugas.dart';
 
 void main() {
   runApp(const MyApp());
